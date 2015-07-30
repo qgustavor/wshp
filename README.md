@@ -17,7 +17,7 @@ The project aims to use Bible content but currently don't have any that can be u
 ## Past of the project:
 It is a work from some years ago and I expect that it finally ends. It all started when I needed to present the Bible and at this time all we have is a Word document. After some time some websites like bible.com could help us, but they don't have presentation modes (i.e. font-sizes above 42px) and aren't going to implement it. The best way seemed to do this from the zero. Some ideas got tested: an single page application, an jQuery based application and finally a React based one, which got super complicated and slow.
 
-## Future of the project;
+## Future of the project:
 I expect that it can inspire new APIs for security, so in future will be not be necessary a Service Worker to deploy signed versions of javascript code, users will can control how their applications are updating and verify integrity, like using PGP or other privacy related tool. Those are some ideas that I think that I will be rejected by most contribuitors from those APIs saying "users don't mind for security" so I'm trying to apply those with the tools we have now.
 
 Other thing I want to inspire is that even if I want a HTTPS internet sometimes we are just over engineering it, like encrypting again in the transport something that was encrypted in the application. I will try to use HTTP to reduce server costs on P2P signaling in order to make it cheaper to deploy and allowing it to be more decentralized.
