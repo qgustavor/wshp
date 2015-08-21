@@ -1,5 +1,5 @@
-["main.js","2015-08-21T19:52:45.675Z","e/L2Xw7pZRc+6Pj8rpOJpkvqY+bogGTsTFpS8AUVJcLGsyGv1hyTDZMa7F7x0U0j/kD0XBbogEwyNMdnDDiixciQEeX5iPI42nbpk1kt4M5HveRm/1D+u5dYt7Zs+VJ0"]
-(function main() {
+["main.js","2015-08-21T20:15:34.938Z","3FR8YVX/8hWY3R4uro8wNheTupx1ekB0xdy0KHmtTK9QN90UiMFXj7XpqjhQShzXiObisk80HC8+yg5UZC0Pm0GGgZv8c6wwL+mhDii8jF3NAF38SQ3swZv+VBrs3ryI"]
+;(function main() {
   'use strict';
   // THIS IS THE WORK IN PROGRESS VERSION
   // It shows the following features
