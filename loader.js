@@ -5,7 +5,7 @@
 'use strict';
 
 // Debug mode requires to use a self-signed certificate
-// (because no CA will sign a certificate for a impossible domain)
+// (because no CA will sign a certificate for a this impossible domain)
 // You can use any static web server for testing it
 
 // Reason: make difficult for a average user to enable it
@@ -19,7 +19,7 @@ const WEBSITE_NAME = 'wshp'; /* maybe needs localization */
 
 const CHECK_PROBLEMS_SNIPPET = '<script>(' + handleProblems + '())</script>';
 const GENERIC_HEADER = `<!DOCTYPE html>
-<html lang=pt>
+<html lang=en>
 <meta charset=utf-8>
 <meta name=viewport content="initial-scale=1, minimum-scale=1, width=device-width">
 <title>${WEBSITE_NAME}</title>
