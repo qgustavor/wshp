@@ -5,7 +5,7 @@
 'use strict';
 
 // Debug mode requires to use a self-signed certificate
-// (because no CA will sign a certificate for a this impossible domain)
+// (because no CA will sign a certificate for this impossible domain)
 // You can use any static web server for testing it
 
 // Reason: make difficult for a average user to enable it
