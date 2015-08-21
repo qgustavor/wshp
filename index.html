@@ -5,7 +5,7 @@
 <title>wshp</title>
 <script>
   if(location.protocol === 'http:') {
-    location=location.href.replace('http:','https:');
+    location = location.href.replace('http:','https:');
   } else if(navigator.serviceWorker) {
     navigator.serviceWorker.register('loader.js', {scope:'/'})
     .then(function () {
@@ -16,8 +16,10 @@
       throw err; /* on Chrome it shows in the console */
     });
   } else {
-    document.getElementById('error-message')
-    .innerHTML = "If you're seeing this then maybe <strong>your browser don't support Service Workers</strong>.";
+    document.addEventListener('DOMContentLoaded', function () {
+      document.getElementById('error-message')
+      .innerHTML = "If you're seeing this then maybe <strong>your browser don't support Service Workers</strong>.";
+    });
   }
 </script>
 <style>/* based on Google error pages */
