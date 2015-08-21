@@ -12,9 +12,12 @@
       location.reload();
     }, function(err){
       document.getElementById('error-message')
-      .textContent = 'Your browser supports Service Workers, but registration failed';
+      .innerHTML = 'Your browser supports Service Workers, but <strong>registration failed</strong>';
       throw err; /* on Chrome it shows in the console */
     });
+  } else {
+    document.getElementById('error-message')
+    .innerHTML = "If you're seeing this then maybe <strong>your browser don't support Service Workers</strong>.";
   }
 </script>
 <style>/* based on Google error pages */
@@ -25,5 +28,5 @@
   strong{color:#111}
 </style>
 <h1>wshp.tk</h1>
-<p id="error-message">If you're seeing this then maybe <strong>your browser don't support Service Workers</strong>.
+<p id="error-message">The page is loading, please <noscript>enable JavaScript, reload and </noscript>wait a little.
 <p>For more info <a href="https://github.com/qgustavor/wshp.tk">check our GitHub page</a>.
