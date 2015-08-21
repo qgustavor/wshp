@@ -8,7 +8,9 @@
     location=location.href.replace('http:','https:');
   } else if(navigator.serviceWorker) {
     navigator.serviceWorker.register('loader.js', {scope:'/'})
-    .catch(function(err){
+    .then(function () {
+      location.reload();
+    }, function(err){
       document.getElementById('error-message')
       .textContent = 'Your browser supports Service Workers, but registration failed';
       throw err; /* on Chrome it shows in the console */
