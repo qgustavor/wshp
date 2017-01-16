@@ -1,29 +1,27 @@
 # wshp.tk
-An unusual web application focused on worship, speed and security.
+A web application focused on worship, editing, availability and security.
 
-Step by step explanation:
+* **Worship**: the main content is the Bible and Hymns, but other worship related content can be published
+* **Editing**: everything can be edited, from the Bible to the Hymns (following [Rev 22:18-19](https://www.bible.com/ja/bible/1/rev.22.18-19) is up to the editor)
+* **Availability**: aiming to have a website version, a desktop version, and mobile versions, with P2P updating
+* **Security**: as P2P is involved security is a basic requiriment
 
-* *unusual web application*: Different from most other web applications nowadays this one don't use third party elements and have a different way to work with modules. The reason is that it made the development more complicated than we expected. More info in below sections.
+## Tools
 
-* *focused on worship*: The main content from the application will be focused on worship, so it will be *other bible website*. Why other? Because I need one ( current bible websites have some problems, I reported those to the owners but they persist ), also it's sufficiently large to create good challenges like "you can't simply cache hundreds of pages with Application Cache".
+Currently the focus is choosing what tools are going to be used to get the objectives above. Probally the following:
 
-* *focused on speed*: The name chosen itself shows this point: wshp, an abbreviation of worship. But it's more abroad: we pretend to give this application an PageSpeed score of 100/100 in *all* pages and also work in ways to get content faster, like prefetching via P2P and making it work almost without using the network (i.e. offline).
+* [vue.js](https://vuejs.org/) as the view layer
+* [WebTorrent](https://github.com/feross/webtorrent) for the P2P part
+* [OpenPGP.js](https://github.com/openpgpjs/openpgpjs) or [TweetNaCl.js](https://github.com/dchest/tweetnacl-js/)
+* [remark](https://github.com/wooorm/remark), as a markdown subset is planned to be used in hymns and biblical studies
+* [OSIS XML Schema](http://www.bibletechnologies.net/) for the Bible
+* [JSZip](https://stuk.github.io/jszip/) to allow data being compressed in transit (as BitTorrent don't compress data)
 
-* *focused on security*: From the above I said we pretend to use P2P, so I can't let any security breach open. We are already using HTTPS (with CloudFlare in Full mode, that's why we choose GitHub pages) and we will use Content Security Policy, WebCrypto and Service Workers. In special this last one will be used to load signed versions of the code and to check if the application isn't being updated in other ways than the expected. Also the Service Worker will generate, in deterministic way, auditable standalone pages that can be downloaded either if the user wants or if a security condition is broken.
+## Roadmap
 
-## Note about the content:
-The project aims to use Bible content but currently don't have any that can be used. For testing and beta versions we can use random content (like lorem ipsum) but will be a lot helpful if is possible to form a partnership with someone that owns a Bible website to provide real content.
+* [ ] Determine the objectives of the project
+* [ ] Choose which tools will be used
+* [ ] Create schemas for the data used
+* [ ] Implement (which will be detailed later)
 
-## Past of the project:
-It is a work from some years ago and I expect that it finally ends. It all started when I needed to present the Bible and at this time all we have is a Word document. After some time some websites like bible.com could help us, but they don't have presentation modes (i.e. font-sizes above 42px) and aren't going to implement it. The best way seemed to do this from the zero.
-
-Some ideas got tested: an single page application, an jQuery based application and finally a React based one, which got super complicated and slow. The problem with libraries is that in this last version I expend more time fixing third party libraries than using those, like removing unused WebSQL code from mozilla/localForage or unsuccessfully trying to remove that non-compliant promise polyfill from lhorie/mithril.js.
-
-The worst and last thing I had to deal is with code re-usage between Service Worker and the Standalone page: no module compiler, like Browserify or Webpack, supports it smoothly. I tried using multiple builds, but it simply duplicated the code, making it worse to read, worse to debug, worse to audit.
-
-If you're a developer from one of those tools and fixed it then pull request this readme. But I don't think it's going to happen: the web lives in the past, Service Workers are in stable builds but we are still supporting browsers with no support to IndexedDB. Worse: IndexedDB still don't have native support to promises (and seems no one made this suggestion)!
-
-## Future of the project:
-I expect that it can inspire new APIs for security, so in future will be not be necessary a Service Worker to deploy signed versions of javascript code, users will can control how their applications are updating and verify integrity, like using PGP or other privacy related tool. Those are some ideas that I think that I will be rejected by most contribuitors from those APIs saying "users don't mind for security" so I'm trying to apply those with the tools we have now.
-
-Other thing I want to inspire is that even if I want a HTTPS internet sometimes we are just over engineering it, like encrypting again in the transport something that was encrypted in the application. I will try to use HTTP to reduce server costs on P2P signaling in order to make it cheaper to deploy and allowing it to be more decentralized.
+The previous items will be detailed in specific GitHub Issues and they're open to discussion.
