@@ -13,4 +13,4 @@ The collection manifest is stored at the root of the folder, named as "_manifest
 * `type`: the type of content (Bible, hymns or studies)
 * `description`: the description of the collection
 
-The criptografic signature signs all the content from the collection, except by the signature itself. It must be regenerated if the collection content changes. To avoid doing that for every single change content edition is based on patches, which are applied to the collection before publishing it. The editor should show a warning when the user open some edited content which patches wan't applied to the collection and properly signed.
+The criptografic signature, `_signature`, signs all the content from the collection, except by the signature itself. It must be regenerated if the collection content changes. To avoid doing that for every single change content edition is based on patches, which are applied to the collection before publishing it. The editor should show a warning when the user open some edited content which patches wan't applied to the collection and properly signed.
